@@ -29,7 +29,6 @@
       itemClick: function (index) {
         // 1.改变currentIndex
         this.currentIndex = index;
-        console.log(this.adr)
         // 2.发出事件
         this.$emit('tabClick', index)
       }
