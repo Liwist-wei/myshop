@@ -2,7 +2,8 @@ import {request} from "./request";
 import axios from "../../../HYMall-master/HYMall-master/src/network/axios";
 export function getHomeMultidata(){
   return request({
-    url:'/home/multidata'
+    url:'/home/multidata',
+    timeout:5000
   })
 }
 

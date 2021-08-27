@@ -20,6 +20,7 @@ export default {
   height: 44px;
   line-height: 44px;
   text-align: center;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 .left {
   width: 60px;
