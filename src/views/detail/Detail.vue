@@ -7,11 +7,13 @@
       <detail-shop-info :shop="shop"></detail-shop-info>
       <detail-goods-info :detail-info="detailInfo" @allLoad="allLoad"></detail-goods-info>
       <detail-param-info :param-info="paramInfo"></detail-param-info>
+      <detail-comment-info :comment-info="commentInfo"></detail-comment-info>
     </scroll>
   </div>
 </template>
 
 <script>
+
 
 import Scroll from "components/common/scroll/Scroll";
 
@@ -23,7 +25,7 @@ import DetailBaseInfo from "./childComps/DetailBaseInfo";
 import DetailShopInfo from "./childComps/DetailShopInfo";
 import DetailGoodsInfo from "./childComps/DetailGoodsInfo";
 import DetailParamInfo from "./childComps/DetailParamInfo";
-
+import DetailCommentInfo from "./childComps/DetailCommentInfo";
 export default {
   name: "Detail",
   components: {
@@ -33,7 +35,8 @@ export default {
     DetailShopInfo,
     Scroll,
     DetailGoodsInfo,
-    DetailParamInfo
+    DetailParamInfo,
+    DetailCommentInfo
 
   },
   data() {
@@ -46,7 +49,8 @@ export default {
       refresh: function () {
       },
       isLoadSwiper: false,
-      detailInfo: {}
+      detailInfo: {},
+      commentInfo:{}
     }
   },
   created() {
@@ -59,8 +63,9 @@ export default {
       this.goods = new Goods(data.itemInfo, data.columns, data.shopInfo.services)
       this.shop = new Shop(data.shopInfo)
       this.paramInfo=new GoodsParam(data.itemParams.info,data.itemParams.rule)
-      console.log(data)
-
+      if (data.rate.list) {
+        this.commentInfo = data.rate.list[0];
+      }
     })
   },
   mounted() {
