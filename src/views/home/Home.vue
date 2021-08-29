@@ -78,7 +78,8 @@ export default {
       isShowBack: false,
       isShowControl: false,
       tabOffsetTop: 0,
-      saveY: 0
+      saveY: 0,
+      refresh:null
     }
   },
 

@@ -32,6 +32,7 @@ export default {
   methods: {
     itemClick(index) {
       this.currentindex = index
+      this.$emit('tabItemClick',index)
     },
     backClick() {
       this.$router.go(-1)
