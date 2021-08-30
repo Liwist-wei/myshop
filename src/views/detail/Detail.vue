@@ -11,7 +11,7 @@
       <goods-list :goods="recommends" ref="recommend"></goods-list>
     </scroll>
 
-    <detail-bottom-bar class="bottom-bar"></detail-bottom-bar>
+    <detail-bottom-bar class="bottom-bar" @addToCart="addToCart"></detail-bottom-bar>
     <back-top @click.native="btnClick" v-show="isShowBack"></back-top>
   </div>
 </template>
@@ -68,7 +68,7 @@ export default {
       currentindex: 0
     }
   },
-  mixins:[backTopMixin],
+  mixins: [backTopMixin],
   created() {
     // 获取ID
     this.iid = this.$route.query.iid
@@ -131,7 +131,7 @@ export default {
       this.$refs.scroll.scrollTo(0, -this.themetopY[index], 100)
     },
     contentScroll(position) {
-      this.isShowBack=-position.y>=1000
+      this.isShowBack = -position.y >= 1000
       for (let i = 0; i < this.themetopY.length; i++) {
         if (this.currentindex != i && -position.y >= this.themetopY[i] && -position.y < this.themetopY[i + 1]) {
           this.currentindex = i
@@ -139,6 +139,20 @@ export default {
           console.log(i)
         }
       }
+    },
+    addToCart() {
+      // 1.创建对象
+      const obj = {}
+      // 2.对象信息
+      obj.iid = this.iid;
+      obj.imgURL = this.topImgs[0]
+      obj.title = this.goods.title
+      obj.desc = this.goods.desc;
+      obj.newPrice = this.goods.nowPrice;
+      obj.counter=1;
+      obj.checked=true;
+      // 3.添加到Store中
+      this.$store.dispatch('addToCart', obj)
     }
   }
 }
