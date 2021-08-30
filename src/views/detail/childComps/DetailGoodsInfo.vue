@@ -29,9 +29,11 @@ export default {
   },
   methods: {
     imgload() {
-      if (++this.counter==this.imglength) {
-        this.$emit('allLoad')
-      }
+      // if (++this.counter==this.imglength) {
+      //   this.$emit('allLoad')
+      // }
+      this.$emit('oneload')
+      // console.log('loading')
     }
   },
   watch:{
