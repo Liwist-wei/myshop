@@ -3,12 +3,11 @@
     <navbar class="navbar">
       <div slot="center">购物车({{ cartLength }})</div>
     </navbar>
-
     <scroll class="cartconten" :pull-up-load="true" :probe-type="3" ref="scroll">
 <!--      <cart-list></cart-list>-->
       <cart-list></cart-list>
-      <bottom-bar class="bar"></bottom-bar>
     </scroll>
+    <bottom-bar class="bar"></bottom-bar>
   </div>
 </template>
 
@@ -27,8 +26,7 @@ export default {
     BottomBar
   },
   computed: {
-    ...mapGetters(['cartLength', "cartList"])
-  },
+    ...mapGetters(['cartLength', "cartList"])},
  activated() {
     this.$refs.scroll.refresh()
  }
@@ -44,14 +42,11 @@ export default {
 }
 
 .cartconten {
-  height: calc(100vh - 44px - 49px);
+  height: calc(100vh - 44px - 49px - 44px);
   overflow: hidden;
 }
 .bar{
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+
 }
 
 </style>

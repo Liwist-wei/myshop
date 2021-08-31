@@ -13,6 +13,7 @@
 
     <detail-bottom-bar class="bottom-bar" @addToCart="addToCart"></detail-bottom-bar>
     <back-top @click.native="btnClick" v-show="isShowBack"></back-top>
+    <toast :message="message"  :isShow="isShow" ></toast>
   </div>
 </template>
 
@@ -20,7 +21,7 @@
 
 
 import Scroll from "components/common/scroll/Scroll";
-
+import Toast from "components/common/toast/Toast";
 
 import {backTopMixin} from "common/mixin";
 import {debounce} from "common/utils";
@@ -48,7 +49,8 @@ export default {
     DetailParamInfo,
     DetailCommentInfo,
     GoodsList,
-    DetailBottomBar
+    DetailBottomBar,
+    Toast
 
   },
   data() {
@@ -65,7 +67,9 @@ export default {
       commentInfo: {},
       recommends: [],
       themetopY: [0, 0, 0, 0],
-      currentindex: 0
+      currentindex: 0,
+      message:'',
+      isShow:false
     }
   },
   mixins: [backTopMixin],
@@ -120,7 +124,6 @@ export default {
       console.log(this.themetopY)
     },
     allLoad() {
-      console.log('详情加载完毕')
       this.refresh()
 
       console.log(this.themetopY)
@@ -152,7 +155,14 @@ export default {
       obj.counter=1;
       obj.checked=true;
       // 3.添加到Store中
-      this.$store.dispatch('addToCart', obj)
+      this.$store.dispatch('addToCart', obj).then(
+        res=>{
+          this.isShow=true
+          this.message=res
+          setTimeout(()=>{
+            this.isShow=false
+          },2000)
+        })
     }
   }
 }
