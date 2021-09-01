@@ -3,7 +3,7 @@
     <CheckButton class="select-all" :value="isSelectAll"   @click.native="checkBtnClick"></CheckButton>
     <span>全选</span>
     <span class="total-price">合计: ¥{{totalPrice}}</span>
-    <span class="buy-product">去结算({{$store.getters.cartLength}})</span>
+    <span class="buy-product">去结算({{AllSelected}})</span>
   </div>
 </template>
 
@@ -26,6 +26,9 @@ export default {
     },
     isSelectAll: function () {
       return this.$store.getters.cartList.find(item => item.checked === false) === undefined;
+    },
+    AllSelected(){
+      return this.$store.getters.cartList.filter(item=>item.checked ).length
     }
   },
   methods: {

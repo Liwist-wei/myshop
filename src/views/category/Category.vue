@@ -1,19 +1,19 @@
 <template>
   <div id="category">
-    <nav-bar class="nav-bar"><div slot="center">商品分类</div></nav-bar>
-    <div class="content">
-      <tab-menu :categories="categories"
-                @selectItem="selectItem"></tab-menu>
+<!--    <nav-bar class="nav-bar"><div slot="center">商品分类</div></nav-bar>-->
+<!--    <div class="content">-->
+<!--      <tab-menu :categories="categories"-->
+<!--                @selectItem="selectItem"></tab-menu>-->
 
-      <scroll id="tab-content" :data="[categoryData]" :pull-up-load="true" :probe-type="3">
-        <div>
-          <tab-content-category :subcategories="showSubcategory"></tab-content-category>
-          <tab-control :titles="['综合', '新品', '销量']"
-                       @tabClick="tabClick"></tab-control>
-          <tab-content-detail :category-detail="showCategoryDetail"></tab-content-detail>
-        </div>
-      </scroll>
-    </div>
+<!--      <scroll id="tab-content" :data="[categoryData]" :pull-up-load="true" :probe-type="3">-->
+<!--        <div>-->
+<!--          <tab-content-category :subcategories="showSubcategory"></tab-content-category>-->
+<!--          <tab-control :titles="['综合', '新品', '销量']"-->
+<!--                       @tabClick="tabClick"></tab-control>-->
+<!--          <tab-content-detail :category-detail="showCategoryDetail"></tab-content-detail>-->
+<!--        </div>-->
+<!--      </scroll>-->
+<!--    </div>-->
   </div>
 </template>
 

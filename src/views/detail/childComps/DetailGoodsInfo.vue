@@ -8,7 +8,7 @@
     </div>
     <div class="info-key">{{ detailInfo.detailImage[0].key }}</div>
     <div class="info-list">
-      <img v-for="(item, index) in detailInfo.detailImage[0].list" :src="item" alt="" @load="imgload">
+      <img v-for="(item, index) in detailInfo.detailImage[0].list" v-lazy="item" alt="" @load="imgload">
     </div>
   </div>
 </template>
@@ -29,11 +29,7 @@ export default {
   },
   methods: {
     imgload() {
-      // if (++this.counter==this.imglength) {
-      //   this.$emit('allLoad')
-      // }
       this.$emit('oneload')
-      // console.log('loading')
     }
   },
   watch:{

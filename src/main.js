@@ -4,10 +4,13 @@ import router from "./router"
 import store from "./store";
 
 import Fastclick from 'fastclick'
+import VueLazyload from "vue-lazyload";
 
 Vue.config.productionTip = false
 Vue.prototype.$bus = new Vue();
-
+Vue.use(VueLazyload,{
+  loading:require('assets/img/common/loading.gif')
+})
 
 Fastclick.attach(document.body)
 

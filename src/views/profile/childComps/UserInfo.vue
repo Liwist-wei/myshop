@@ -24,7 +24,10 @@
 
 <script>
 	export default {
-		name: "UserInfo"
+		name: "UserInfo",
+    components:
+      {
+      }
 	}
 </script>
 

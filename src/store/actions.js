@@ -4,7 +4,6 @@ export default {
   addToCart(context, product) {
   return new Promise((resolve,reject) => {
     let pitem = this.state.cartList.find(item => item.iid === product.iid)
-    console.log(pitem)
     if(pitem)
     {
       context.commit(ADD_COUNTER,pitem)

@@ -1,5 +1,5 @@
 import {request} from "./request";
-import axios from "../../../HYMall-master/HYMall-master/src/network/axios";
+
 export function getHomeMultidata(){
   return request({
     url:'/home/multidata',
@@ -8,7 +8,7 @@ export function getHomeMultidata(){
 }
 
 export function getHomeData(type, page) {
-  return axios({
+  return request({
     url: '/home/data',
     params: {
       type,

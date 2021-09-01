@@ -117,17 +117,13 @@ export default {
       //加载一次刷新一次，这里没有用防抖
       this.refresh()
       this.themetopY = [0];
-      this.themetopY.push(this.$refs.params.$el.offsetTop - 44)
-      this.themetopY.push(this.$refs.comment.$el.offsetTop - 44)
-      this.themetopY.push(this.$refs.recommend.$el.offsetTop - 44)
+      this.themetopY.push(this.$refs.params.$el.offsetTop )
+      this.themetopY.push(this.$refs.comment.$el.offsetTop )
+      this.themetopY.push(this.$refs.recommend.$el.offsetTop)
       this.themetopY.push(Number.MAX_VALUE)
-      console.log(this.themetopY)
     },
     allLoad() {
       this.refresh()
-
-      console.log(this.themetopY)
-
     },
     tabItemClick(index) {
 
@@ -139,7 +135,6 @@ export default {
         if (this.currentindex != i && -position.y >= this.themetopY[i] && -position.y < this.themetopY[i + 1]) {
           this.currentindex = i
           this.$refs.contentnavbar.currentindex = i
-          console.log(i)
         }
       }
     },

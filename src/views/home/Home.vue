@@ -130,7 +130,6 @@ export default {
       this.$refs.tabControl.currentIndex = index;
     },
     btnClick() {
-      console.log("ok")
       this.$refs.scroll.scroll.scrollTo(0, 0, 500)
     },
     contentScroll(position) {
@@ -138,7 +137,6 @@ export default {
       this.isShowControl = -position.y > this.tabOffsetTop
     },
     loadMore() {
-      console.log("成功加载")
       this.getHomeProducts(this.currentType)
       this.$refs.scroll.finishPullUp()
     },
