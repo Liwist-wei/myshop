@@ -50,6 +50,7 @@ export default {
       this.scroll.scrollTo(x, y, time)
     },
     refresh() {
+      console.log("刷新1次")
     this.scroll.refresh();
     },
     finishPullUp() {

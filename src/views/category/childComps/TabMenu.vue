@@ -1,6 +1,5 @@
 <template>
-  <scroll id="tab-menu">
-    <div class="menu-list">
+    <div class="menu-list " id="tab-menu">
       <div class="menu-list-item"
            :class="{active: index===currentIndex}"
            v-for="(item, index) in categories"
@@ -9,7 +8,7 @@
         {{item.title}}
       </div>
     </div>
-  </scroll>
+
 </template>
 
 <script>
@@ -33,8 +32,11 @@
         this.currentIndex = index
         this.$emit('selectItem', index)
       }
-    }
-	}
+    },
+    mounted() {
+    },
+
+  }
 </script>
 
 <style scoped>

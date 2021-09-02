@@ -91,14 +91,13 @@ export default {
     this.getHomeProducts('sell', this.page);
   },
 
-
   mounted() {
     let refresh = debounce(this.$refs.scroll.refresh, 100)
     this.$bus.$on('imgload', () => {
       refresh();
-
     })
   },
+
   activated() {
     this.$refs.scroll.scrollTo(0,this.saveY,0)
     this.$refs.scroll.refresh()

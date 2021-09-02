@@ -11,8 +11,8 @@ Vue.prototype.$bus = new Vue();
 Vue.use(VueLazyload,{
   loading:require('assets/img/common/loading.gif')
 })
-
-Fastclick.attach(document.body)
+//无法监听双击
+// Fastclick.attach(document.body)
 
 new Vue({
   render: h => h(App),

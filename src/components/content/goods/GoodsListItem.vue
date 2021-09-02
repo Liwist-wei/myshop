@@ -25,9 +25,13 @@
         if (this.$route.path.indexOf('/home')!= -1){
           console.log("home refresh")
           this.$bus.$emit('imgload');
-        }else{
+        }else if(this.$route.path.indexOf('/home')!=-1)
+        {
           console.log("detail refresh")
           this.$bus.$emit('detailload')
+        }else {
+          console.log('category fresh')
+          this.$bus.$emit('categoryload')
         }
 
       },
@@ -42,8 +46,8 @@
     },
     computed:{
       showImg(){
-        return this.goodsItem.image||this.goodsItem.show.img
-      }
+        return this.goodsItem.image||this.goodsItem.img||this.goodsItem.show.img
+      },
     }
   }
 </script>
@@ -52,7 +56,6 @@
   .goods-item {
     padding-bottom: 40px;
     position: relative;
-
     width: 48%;
   }
 
