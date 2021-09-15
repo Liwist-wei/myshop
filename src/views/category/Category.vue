@@ -146,7 +146,6 @@ export default {
           this.currentType = SELL
           break
       }
-
     }
   }
 
@@ -161,8 +160,6 @@ export default {
 
 #tab-menu-scroll {
   height: calc(100vh - 44px - 49px);
-
-
 }
 
 .nav-bar {
@@ -180,10 +177,6 @@ export default {
   display: flex;
   flex: 1;
 }
-#content{
-
-}
-
 #tab-content-scroll {
   height: calc(100vh - 44px - 49px) ;
   overflow: hidden;
