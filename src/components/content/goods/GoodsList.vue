@@ -14,10 +14,6 @@
     components: {
       GoodsListItem,
     },
-   created() {
-     console.log('okkkkk');
-     console.log(this.goods)
-      },
    props: {
       goods: {
         type: Array,

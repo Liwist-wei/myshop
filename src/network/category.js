@@ -2,7 +2,6 @@ import {request} from './request'
 
 
 export function getCategory() {
-  console.log("我在请求")
   return request({
     url: '/category'
   })

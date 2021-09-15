@@ -23,14 +23,14 @@
     methods:{
       imgload(){
         if (this.$route.path.indexOf('/home')!= -1){
-          console.log("home refresh")
+
           this.$bus.$emit('imgload');
         }else if(this.$route.path.indexOf('/home')!=-1)
         {
-          console.log("detail refresh")
+
           this.$bus.$emit('detailload')
         }else {
-          console.log('category fresh')
+
           this.$bus.$emit('categoryload')
         }
 
