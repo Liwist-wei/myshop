@@ -146,6 +146,7 @@ export default {
 
     getMultidata() {
       getHomeMultidata().then(res => {
+        console.log(typeof res)
         this.recommends = res.data.recommend.list;
         this.banners = res.data.banner.list;
       })
